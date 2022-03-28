@@ -42,3 +42,14 @@ The analysis of the election shows that:
 
 ## Election-Audit Summary
 
+In the event of future elections, this script is highly versatile and can easily be modified to fit the needs of a new audit. 
+
+Steps to re-use the script:
+1. Add the new results file to the "Resources" folder, updating the input file. 
+2. Change line 9 of the script:
+     - file_to_load = os.path.join("Resources", "election_results.csv") to file_to_load = os.path.join("Resources", <"NEW_RESULTS_FILE.csv">)
+3. Check the order of columns in the NEW_RESULTS_FILE.csv to make sure that the code in the for loop that is indexed in reference to the columns to assign values to the starter variables are correct. If the new dataset has a different arrangement, adjust the indexing of row[] to be accurate.
+    - line 48: candidate_name = row[2] 
+    - line 51: county_name = row[1]
+
+By making these small adjusments, the code can now work through the input data and complete the audit of a new election.
